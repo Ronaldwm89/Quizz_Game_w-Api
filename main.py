@@ -1,6 +1,7 @@
 from data import data, questions
 import random
 
+
 question_number = 1
 start = True
 
