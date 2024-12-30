@@ -1,26 +1,33 @@
 from data import data, questions
+from interface import Interface
 import random
+import html
 
 
-question_number = 1
-start = True
 
-while start: 
-    random_question = random.choice(questions)
-    ind = questions.index(random_question)
-    correct_answer = data['results'][ind]['correct_answer']
+score_number = 1
+
+def random_question():
+   ran_question = random.choice(questions)
+   formated_question = html.unescape(ran_question)
+   ind = questions.index(ran_question)
+   correct_answer = data['results'][ind]['correct_answer']
+
     
-    print(f"{question_number}- Pregunta: {random_question}: True or False")
+   return score_number, formated_question, correct_answer
 
-    usuario_answer = input("Ingresa tu respuesta: \n").capitalize()
 
-    if usuario_answer == correct_answer:
-       print("Felicitaciones, acertaste!!")
-       question_number += 1
-       
-    else:
-       print("Lo sentimos, Perdiste")
-       start = False
+question = random_question()
+UI = Interface(question)
+#usuario_answer = input("Ingresa tu respuesta: \n").capitalize()
+
+'''
+if usuario_answer == correct_answer:
+   score_number += 1
+   print(f"Felicitaciones, acertaste!! Score = {score_number-1}")    
+else:
+   print(f"Lo sentimos, Perdiste, puntuacion final: {score_number-1}")
+   '''
 
 
 

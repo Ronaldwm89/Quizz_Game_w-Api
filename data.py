@@ -3,6 +3,7 @@ import time
 
 
 response = requests.get("https://opentdb.com/api.php?amount=10&type=boolean")
+response.raise_for_status()
 data = response.json()
 
 if response.status_code == 200:
@@ -13,10 +14,6 @@ if response.status_code == 429:
      print(f"Demasiadas solicitudes, esperando {retry_after} segundos...")
      time.sleep(int(retry_after))
      
-
-
-
-
 
 
 
