@@ -15,7 +15,7 @@ This project consists of three main modules:
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/quiz-game.git
+    git clone https://github.com/Ronaldwm89/quiz-game.git
     cd quiz-game
     ```
 
